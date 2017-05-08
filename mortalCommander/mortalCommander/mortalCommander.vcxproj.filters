@@ -24,6 +24,9 @@
     <ClCompile Include="FileBrowserControl.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
+    <ClCompile Include="FileObject.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainForm.h">
@@ -32,10 +35,13 @@
     <ClInclude Include="FileBrowserControl.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="FileObjectTypeEnum.h">
+    <ClInclude Include="ISectorObject.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="ISectorObject.h">
+    <ClInclude Include="FileObject.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="SectorObjectTypeEnum.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>

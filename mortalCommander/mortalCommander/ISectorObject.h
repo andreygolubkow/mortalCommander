@@ -1,15 +1,16 @@
 ﻿#pragma once
 #include <string>
-#include "FileObjectTypeEnum.h"
+#include "SectorObjectTypeEnum.h"
 
-class ISectorObject
+//
+ref class  ISectorObject
 {
 	public:
-		virtual	std::string GetLiteral();
-		virtual std::string GetName();
-		virtual std::string GetExtension();
-		virtual std::string GetCreateDate();
-		virtual std::string SetName();
+		virtual	String^ GetLiteral();
+		virtual String^ GetName();
+		virtual String^ GetExtension();
+		virtual String^ GetCreateDate();
+		virtual void SetName(String^ name);
 		virtual void Delete();
-		virtual FileObjectType GetObjectType();
+		virtual SectorObjectType GetObjectType();
 };

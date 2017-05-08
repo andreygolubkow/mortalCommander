@@ -139,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FileBrowserControl.cpp" />
+    <ClCompile Include="FileObject.cpp" />
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="Program.cpp" />
   </ItemGroup>
@@ -146,7 +147,8 @@
     <ClInclude Include="FileBrowserControl.h">
       <FileType>CppControl</FileType>
     </ClInclude>
-    <ClInclude Include="FileObjectTypeEnum.h" />
+    <ClInclude Include="FileObject.h" />
+    <ClInclude Include="SectorObjectTypeEnum.h" />
     <ClInclude Include="ISectorObject.h" />
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>
