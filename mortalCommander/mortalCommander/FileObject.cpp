@@ -13,29 +13,24 @@ FileObject::~FileObject()
 	
 }
 
-String^ FileObject::GetLiteral()
-{
-	
-}
-
 String^ FileObject::GetName()
 {
-
+	return _fileInfo->Name;
 }
 
 String^ FileObject::GetExtension()
 {
-
+	return _fileInfo->Extension;
 }
 
-String^ FileObject::GetCreateDate()
+DateTime FileObject::GetCreateDate()
 {
-
+	return _fileInfo->CreationTime;
 }
 
-String^ FileObject::SetName()
+void FileObject::MoveTo(String^ newPath)
 {
-	_fileInfo
+	_fileInfo->MoveTo(newPath);
 }
 
 void FileObject::Delete()
@@ -43,7 +38,7 @@ void FileObject::Delete()
 	_fileInfo->Delete();
 }
 
-SectorObjectType FileObject::GetObjectType()
+SectorObjectType FileObject::GetObjectType() 
 {
 	return SectorObjectType::File;
 }

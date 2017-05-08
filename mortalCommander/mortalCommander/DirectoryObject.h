@@ -1,16 +1,15 @@
 ﻿#pragma once
 #include "ISectorObject.h"
 
-ref class FileObject : public ISectorObject
+ref class DirectoryObject : public ISectorObject
 {
 private:
 	System::IO::FileInfo^ _fileInfo;
 
 public:
-	FileObject(System::String^ fileName);
-	~FileObject();
+	DirectoryObject(System::String^ fileName);
+	~DirectoryObject();
 	System::String^ GetName() override;
-	System::String^ GetExtension() ;
 	System::DateTime GetCreateDate() override;
 	void MoveTo(System::String^ newPath) override;
 	void Delete() override;

@@ -1,16 +1,13 @@
 ﻿#pragma once
-#include <string>
 #include "SectorObjectTypeEnum.h"
 
-//
+
 ref class  ISectorObject
 {
-	public:
-		virtual	String^ GetLiteral();
-		virtual String^ GetName();
-		virtual String^ GetExtension();
-		virtual String^ GetCreateDate();
-		virtual void SetName(String^ name);
-		virtual void Delete();
-		virtual SectorObjectType GetObjectType();
+	public: 
+		virtual System::String^ GetName() = 0;
+		virtual System::DateTime GetCreateDate() = 0;
+		virtual void MoveTo(System::String^ newPath) = 0;
+		virtual void Delete() = 0;
+		virtual SectorObjectType GetObjectType() = 0;
 };
