@@ -4,8 +4,7 @@
 ref class DirectoryObject : public ISectorObject
 {
 private:
-	System::IO::FileInfo^ _fileInfo;
-
+	System::IO::DirectoryInfo^ _directoryInfo;
 public:
 	DirectoryObject(System::String^ fileName);
 	~DirectoryObject();
@@ -13,5 +12,6 @@ public:
 	System::DateTime GetCreateDate() override;
 	void MoveTo(System::String^ newPath) override;
 	void Delete() override;
+	System::Collections::Generic::List<ISectorObject^> GetFiles();
 	SectorObjectType GetObjectType() override;
 };
