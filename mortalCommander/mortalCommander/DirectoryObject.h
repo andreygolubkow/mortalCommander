@@ -12,6 +12,6 @@ public:
 	System::DateTime GetCreateDate() override;
 	void MoveTo(System::String^ newPath) override;
 	void Delete() override;
-	System::Collections::Generic::List<ISectorObject^> GetFiles();
+	System::Collections::Generic::List<ISectorObject^>^ GetFiles();
 	SectorObjectType GetObjectType() override;
 };
