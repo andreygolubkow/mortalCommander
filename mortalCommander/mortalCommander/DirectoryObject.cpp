@@ -11,9 +11,21 @@ DirectoryObject::~DirectoryObject()
 
 }
 
+System::Double^ DirectoryObject::GetSize()
+{
+	auto nan = gcnew System::Double;
+	nan = 0 / 0*1.0;
+	return  nan;
+}
+
 System::String ^ DirectoryObject::GetName()
 {
 	return _directoryInfo->Name;
+}
+
+System::String ^ DirectoryObject::GetParentPath()
+{
+	return _directoryInfo->Parent == nullptr ? _directoryInfo->FullName : _directoryInfo->Parent->FullName;
 }
 
 System::DateTime DirectoryObject::GetCreateDate()
@@ -34,18 +46,32 @@ void DirectoryObject::Delete()
 System::Collections::Generic::List<ISectorObject^>^ DirectoryObject::GetFiles()
 {
 	System::Collections::Generic::List<ISectorObject^>^ sectorList = gcnew System::Collections::Generic::List<ISectorObject^>();
-	for each (auto dir in _directoryInfo->GetDirectories())
+	try
 	{
-		sectorList->Add(gcnew DirectoryObject(dir->FullName));
+		for each (auto dir in _directoryInfo->GetDirectories())
+		{
+			sectorList->Add(gcnew DirectoryObject(dir->FullName));
+		}
+		for each (auto file in _directoryInfo->GetFiles())
+		{
+			sectorList->Add(gcnew FileObject(file->FullName));
+		}
 	}
-	for each (auto file in _directoryInfo->GetFiles())
+	catch (System::Exception^ ex)
 	{
-		sectorList->Add(gcnew FileObject(file->FullName));
+		System::String^ message = ex->Message;
+		System::Windows::Forms::MessageBox::Show(message);
 	}
+	
 	return sectorList;
 }
 
-SectorObjectType DirectoryObject::GetObjectType()
+System::String^ DirectoryObject::GetFullPath()
 {
-	return SectorObjectType::Directory;
+	return _directoryInfo->FullName;
+}
+
+System::String^ DirectoryObject::GetStringLitera()
+{
+	return "#";
 }

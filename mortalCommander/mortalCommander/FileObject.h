@@ -14,5 +14,7 @@ public:
 	System::DateTime GetCreateDate() override;
 	void MoveTo(System::String^ newPath) override;
 	void Delete() override;
-	SectorObjectType GetObjectType() override;
+	System::Double^ GetSize() override;
+	System::String^ GetStringLitera() override;
+	System::String^ GetFullPath() override;
 };

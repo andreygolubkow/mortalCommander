@@ -13,6 +13,13 @@ FileObject::~FileObject()
 	
 }
 
+System::Double^ FileObject::GetSize()
+{
+	auto size = gcnew System::Double;
+	size = _fileInfo->Length / 1024*1.0;
+	return  size;
+}
+
 String^ FileObject::GetName()
 {
 	return _fileInfo->Name;
@@ -22,6 +29,12 @@ String^ FileObject::GetExtension()
 {
 	return _fileInfo->Extension;
 }
+
+String^ FileObject::GetFullPath()
+{
+	return _fileInfo->FullName;
+}
+
 
 DateTime FileObject::GetCreateDate()
 {
@@ -38,9 +51,9 @@ void FileObject::Delete()
 	_fileInfo->Delete();
 }
 
-SectorObjectType FileObject::GetObjectType() 
+System::String^ FileObject::GetStringLitera()
 {
-	return SectorObjectType::File;
+	return "-";
 }
 
 

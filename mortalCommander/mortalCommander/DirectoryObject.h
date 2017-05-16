@@ -13,5 +13,9 @@ public:
 	void MoveTo(System::String^ newPath) override;
 	void Delete() override;
 	System::Collections::Generic::List<ISectorObject^>^ GetFiles();
-	SectorObjectType GetObjectType() override;
+	System::String^ GetStringLitera() override;
+	System::Double^ GetSize() override;
+	System::String^ GetFullPath() override;
+	System::String^ GetParentPath();
+
 };
